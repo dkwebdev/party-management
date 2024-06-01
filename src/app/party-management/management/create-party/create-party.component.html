@@ -1,0 +1,473 @@
+<div class="form-width card">
+    <form [formGroup]="partyForm">
+        <div class="card-body">
+            <h3>{{partyId ? "Update": "Create"}} Page</h3>
+            <div class="h4 pb-2 mb-4 border-bottom border-dark"></div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="mb-3 text-start">
+                        <label for="exampleFormControlInput1" class="form-label">Name</label>
+                        <input type="text" class="form-control" placeholder="name" formControlName="name">
+
+                        <div *ngIf="f.name.invalid && f.name.touched">
+                            <small class="validation-msg" *ngIf="f.name.errors?.required">
+                                Name is required.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="mb-3 text-start">
+                        <label for="exampleFormControlInput1" class="form-label">Company Name</label>
+                        <input type="text" class="form-control" placeholder="Company Name"
+                            formControlName="company_name">
+                        <div *ngIf="f.company_name.invalid && f.company_name.touched">
+                            <small class="validation-msg" *ngIf="f.company_name.errors?.required">
+                                Company Name is required.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="mb-3 text-start">
+                        <label for="exampleFormControlInput1" class="form-label">Mobile No.</label>
+                        <input type="text" class="form-control" placeholder="Mobile No." formControlName="mobile_no">
+                        <div *ngIf="f.mobile_no.invalid && f.mobile_no.touched">
+                            <small class="validation-msg" *ngIf="f.mobile_no.errors?.required">
+                                Mobile No. is required.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="mb-3 text-start">
+                        <label for="exampleFormControlInput1" class="form-label">Telephone No.</label>
+                        <input type="text" class="form-control" placeholder="Telephone No."
+                            formControlName="telephone_no">
+                        <div *ngIf="f.telephone_no.invalid && f.telephone_no.touched">
+                            <small class="validation-msg" *ngIf="f.telephone_no.errors?.required">
+                                Telephone No. is required.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="mb-3 text-start">
+                        <label for="exampleFormControlInput1" class="form-label">Whatsapp No.</label>
+                        <input type="text" class="form-control" placeholder="Whatsapp No."
+                            formControlName="whatsapp_no">
+                        <div *ngIf="f.whatsapp_no.invalid && f.whatsapp_no.touched">
+                            <small class="validation-msg" *ngIf="f.whatsapp_no.errors?.required">
+                                Whatsapp No. is required.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="mb-3 text-start">
+                        <label for="exampleFormControlInput1" class="form-label">Email</label>
+                        <input type="email" class="form-control" placeholder="Email" formControlName="email">
+                        <div *ngIf="f.email.invalid && f.email.touched">
+                            <small class="validation-msg" *ngIf="f.email.errors?.required">
+                                Email is required.
+                            </small>
+                            <small class="validation-msg" *ngIf="f.email.errors?.customEmail">Invalid email
+                                format.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="mb-3 text-start">
+                        <label for="exampleFormControlInput1" class="form-label">Date of Birth</label>
+                        <input type="date" class="form-control" placeholder="Date of Birth"
+                            formControlName="date_of_birth">
+                        <div *ngIf="f.date_of_birth.invalid && f.date_of_birth.touched">
+                            <small class="validation-msg" *ngIf="f.date_of_birth.errors?.required">
+                                Date is required.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="mb-3 text-start">
+                        <label for="exampleFormControlInput1" class="form-label">Anniversary Date</label>
+                        <input type="date" class="form-control" placeholder="Anniversary Date"
+                            formControlName="anniversary_date">
+                        <div *ngIf="f.anniversary_date.invalid && f.anniversary_date.touched">
+                            <small class="validation-msg" *ngIf="f.anniversary_date.errors?.required">
+                                Anniversary date is required.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="mb-3 text-start">
+                        <label for="exampleFormControlInput1" class="form-label">Remark</label>
+                        <input type="text" class="form-control" placeholder="Remark" formControlName="remark">
+                        <div *ngIf="f.remark.invalid && f.remark.touched">
+                            <small class="validation-msg" *ngIf="f.remark.errors?.required">
+                                Remark is required.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="mb-3 text-start">
+                        <label for="exampleFormControlInput1" class="form-label">GSTIN</label>
+                        <input type="text" class="form-control" placeholder="GSTIN" formControlName="gstin">
+                        <div *ngIf="f.gstin.invalid && f.gstin.touched">
+                            <small class="validation-msg" *ngIf="f.gstin.errors?.required">
+                                GSTIN is required.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="mb-3 text-start">
+                        <label for="exampleFormControlInput1" class="form-label">Pan No.</label>
+                        <input type="text" class="form-control" placeholder="Pan No." formControlName="pan_no">
+                        <div *ngIf="f.pan_no.invalid && f.pan_no.touched">
+                            <small class="validation-msg" *ngIf="f.pan_no.errors?.required">
+                                Pan No. is required.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="mb-3 text-start">
+                        <label for="exampleFormControlInput1" class="form-label">Login Access</label>
+                        <div class="d-flex">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="login_access" id="flexRadioDefault1"
+                                    formControlName="login_access" [value]=true>
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Yes
+                                </label>
+                            </div>
+
+                            <div class="form-check ms-5">
+                                <input class="form-check-input" type="radio" name="login_access" id="flexRadioDefault2"
+                                    formControlName="login_access" [value]=false>
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                        <div *ngIf="f.login_access.invalid && f.login_access.touched">
+                            <small class="validation-msg" *ngIf="f.login_access.errors?.required">
+                                Login Access is required.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="mb-3 text-start">
+                        <label for="exampleFormControlInput1" class="form-label">Credit Limit</label>
+                        <input type="number" class="form-control" placeholder="Credit Limit"
+                            formControlName="credit_limit">
+                        <div *ngIf="f.credit_limit.invalid && f.credit_limit.touched">
+                            <small class="validation-msg" *ngIf="f.credit_limit.errors?.required">
+                                Credit Limit is required.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="mb-3 text-start">
+                        <label for="exampleFormControlInput1" class="form-label">Apply TDS</label>
+                        <div class="d-flex">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="apply_tds" id="applytdsYes"
+                                    formControlName="apply_tds" [value]=true>
+                                <label class="form-check-label" for="applytdsYes">
+                                    Yes
+                                </label>
+                            </div>
+
+                            <div class="form-check ms-5">
+                                <input class="form-check-input" type="radio" name="apply_tds" id="applytdsNo"
+                                    formControlName="apply_tds" [value]=false>
+                                <label class="form-check-label" for="applytdsNo">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                        <div *ngIf="f.apply_tds.invalid && f.apply_tds.touched">
+                            <small class="validation-msg" *ngIf="f.apply_tds.errors?.required">
+                                Apply TDS is required.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="mb-3 text-start">
+                        <label for="formFileMultiple" class="form-label">Images</label>
+                        <input class="form-control" type="file" accept=".png, .jpg"
+                            (change)="imagesFileUploader($event)">
+                        <input type="hidden" formControlName="image" />
+                        <div *ngIf="f.image.invalid && f.image.touched">
+                            <small class="validation-msg" *ngIf="f.image.errors?.required">
+                                Image is required.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Address -->
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="text-start">Address</h3>
+                    <div class="h4 pb-2 mb-4 border-bottom border-dark"></div>
+                    <div formArrayName="address">
+                        <div *ngFor="let address of address.controls; let i = index; let last = last"
+                            [formGroupName]="i" class="d-flex">
+                            <div>
+                                <div class="card card-width mt-3">
+                                    <div class="d-flex">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="mb-3 text-start">
+                                                        <label for="exampleFormControlInput1" class="form-label">Address
+                                                            Line
+                                                            1</label>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Address Line 1"
+                                                            formControlName="address_line_1">
+                                                        <div
+                                                            *ngIf="address.get('address_line_1')?.invalid && address.get('address_line_1')?.touched">
+                                                            <small class="validation-msg"
+                                                                *ngIf="address.get('address_line_1')?.errors?.['required']">
+                                                                Address Line 1 is required.
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="mb-3 text-start">
+                                                        <label for="exampleFormControlInput1" class="form-label">Address
+                                                            Line
+                                                            2</label>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Address Line 2"
+                                                            formControlName="address_line_2">
+                                                        <div
+                                                            *ngIf="address.get('address_line_2')?.invalid && address.get('address_line_2')?.touched">
+                                                            <small class="validation-msg"
+                                                                *ngIf="address.get('address_line_2')?.errors?.['required']">
+                                                                Address Line 2 is required.
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="mb-3 text-start">
+                                                        <label for="exampleFormControlInput1"
+                                                            class="form-label">Country</label>
+                                                        <input type="text" class="form-control" placeholder="Country"
+                                                            formControlName="country">
+                                                        <div
+                                                            *ngIf="address.get('country')?.invalid && address.get('country')?.touched">
+                                                            <small class="validation-msg"
+                                                                *ngIf="address.get('country')?.errors?.['required']">
+                                                                Country is required.
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="mb-3 text-start">
+                                                        <label for="exampleFormControlInput1"
+                                                            class="form-label">State</label>
+                                                        <input type="text" class="form-control" placeholder="State"
+                                                            formControlName="state">
+                                                        <div
+                                                            *ngIf="address.get('state')?.invalid && address.get('state')?.touched">
+                                                            <small class="validation-msg"
+                                                                *ngIf="address.get('state')?.errors?.['required']">
+                                                                State is required.
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="mb-3 text-start">
+                                                        <label for="exampleFormControlInput1"
+                                                            class="form-label">City</label>
+                                                        <input type="text" class="form-control" placeholder="City"
+                                                            formControlName="city">
+                                                        <div
+                                                            *ngIf="address.get('city')?.invalid && address.get('city')?.touched">
+                                                            <small class="validation-msg"
+                                                                *ngIf="address.get('city')?.errors?.['required']">
+                                                                City is required.
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="mb-3 text-start">
+                                                        <label for="exampleFormControlInput1" class="form-label">Pin
+                                                            code</label>
+                                                        <input type="text" class="form-control" placeholder="Pin code"
+                                                            formControlName="pincode">
+                                                        <div
+                                                            *ngIf="address.get('pincode')?.invalid && address.get('pincode')?.touched">
+                                                            <small class="validation-msg"
+                                                                *ngIf="address.get('pincode')?.errors?.['required']">
+                                                                Pin Code is required.
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <i class="icon fa fa-plus-circle" aria-hidden="true" (click)="add_AddressGroup()"></i>
+
+                                <i *ngIf="i > 0" class="icon fa fa-minus-circle" aria-hidden="true"
+                                    (click)="remove_AddresGroup(i)"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bank Details -->
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="text-start">Bank Details</h3>
+                    <div class="h4 pb-2 mb-4 border-bottom border-dark"></div>
+                    <div formArrayName="bank">
+                        <div *ngFor="let bank of bankGroup.controls; let i = index; let last = last" [formGroupName]="i"
+                            class="d-flex">
+                            <div>
+                                <div class="card card-width mt-3">
+                                    <div class="d-flex">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="mb-3 text-start">
+                                                        <label for="exampleFormControlInput1-{{i}}"
+                                                            class="form-label">Bank IFSC Code</label>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Bank IFSC Code"
+                                                            formControlName="bank_ifsc_code">
+                                                        <div
+                                                            *ngIf="bank.get('bank_ifsc_code')?.invalid && bank.get('bank_ifsc_code')?.touched">
+                                                            <small class="validation-msg"
+                                                                *ngIf="bank.get('bank_ifsc_code')?.errors?.['required']">
+                                                                IFSC Code is required.
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="mb-3 text-start">
+                                                        <label for="exampleFormControlInput1" class="form-label">Bank
+                                                            Name
+                                                        </label>
+                                                        <input type="text" class="form-control" placeholder="Bank Name"
+                                                            formControlName="bank_name">
+                                                        <div
+                                                            *ngIf="bank.get('bank_name')?.invalid && bank.get('bank_name')?.touched">
+                                                            <small class="validation-msg"
+                                                                *ngIf="bank.get('bank_name')?.errors?.['required']">
+                                                                Bank Name is required.
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="mb-3 text-start">
+                                                        <label for="exampleFormControlInput1" class="form-label">Branch
+                                                            Name</label>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Branch Name" formControlName="branch_name">
+                                                        <div
+                                                            *ngIf="bank.get('branch_name')?.invalid && bank.get('branch_name')?.touched">
+                                                            <small class="validation-msg"
+                                                                *ngIf="bank.get('branch_name')?.errors?.['required']">
+                                                                Branch Name is required.
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="mb-3 text-start">
+                                                        <label for="exampleFormControlInput1" class="form-label">Account
+                                                            No.</label>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Account No." formControlName="account_no">
+                                                        <div
+                                                            *ngIf="bank.get('account_no')?.invalid && bank.get('account_no')?.touched">
+                                                            <small class="validation-msg"
+                                                                *ngIf="bank.get('account_no')?.errors?.['required']">
+                                                                Account No. is required.
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="mb-3 text-start">
+                                                        <label for="exampleFormControlInput1" class="form-label">Account
+                                                            Holder Name</label>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Account Holder Name"
+                                                            formControlName="account_holder_name">
+                                                        <div
+                                                            *ngIf="bank.get('account_holder_name')?.invalid && bank.get('account_holder_name')?.touched">
+                                                            <small class="validation-msg"
+                                                                *ngIf="bank.get('account_holder_name')?.errors?.['required']">
+                                                                Account Holder Name is required.
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <i class="icon fa fa-plus-circle" aria-hidden="true" (click)="addBankGroup()"></i>
+
+                                <i *ngIf="i > 0" class="icon fa fa-minus-circle" aria-hidden="true"
+                                    (click)="removeBankGroup(i)"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary mt-3" (click)="createUpdate()">{{partyId ? "Update":
+                "Create"}}</button>
+        </div>
+    </form>
+</div>
